@@ -17,9 +17,6 @@
         columnsM="1"
         validateFieldGroup="onValidateFieldGroup">
         <f:content>
-            <Label text="testovací pole" />
-            <Text text="{/screenState/numberColor}">
-            </Text>
             <Label text="Random number"/>
             <Text id="number"
                 class="big"
@@ -43,7 +40,8 @@
                 enabled="{/screenState/submitButtonAllowed}">
             </Button>
             <Button text="Reset"
-                type="Reject"/>
+                type="Reject"
+                press="onResetButton"/>
 
         </f:content>
     </f:SimpleForm>

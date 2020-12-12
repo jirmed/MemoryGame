@@ -27,6 +27,9 @@ sap.ui.define([
       this.number = data.number;
       this.settings = data.settings || new Settings();
       this.statistics = data.statistics || new Statistics();
+    },
+    resetStatistics: function() {
+      this.statistics.reset();
     }
   });
 }); 

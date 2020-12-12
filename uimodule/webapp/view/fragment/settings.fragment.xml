@@ -4,6 +4,7 @@
     xmlns:l="sap.ui.layout"
     xmlns="sap.m">
     <f:SimpleForm id="settings"
+        binding="{/settings}"
         minWidth="1024"
         maxContainerCols="3"
         editable="true"
@@ -23,7 +24,7 @@
                 </layoutData>
             </Label>
             <StepInput id="digits"
-                value="{/settings/digits}"
+                value="{digits}"
                 change="onSettingsChange"
                 fieldWidth="50%"
                 description=" "
@@ -42,7 +43,7 @@
                 </layoutData>
             </Label>
             <StepInput description="ms"
-                value="{/settings/delay}"
+                value="{delay}"
                 change="onSettingsChange"
                 fieldWidth="50%"
                 min="0"
@@ -59,7 +60,7 @@
                     <l:GridData span="XL2 L2 M6 S6"/>
                 </layoutData>
             </Label>
-            <Switch state="{/settings/reverse}"
+            <Switch state="{reverse}"
                 change="onSettingsChange">
                 <layoutData>
                     <l:GridData span="XL1 L1 M6 S6"/>
@@ -70,7 +71,7 @@
                     <l:GridData span="XL2 L2 M6 S6"/>
                 </layoutData>
             </Label>
-            <Switch state="{/settings/showNumber}"
+            <Switch state="{showNumber}"
                 change="onSettingsChange">
                 <layoutData>
                     <l:GridData span="XL1 L1 M6 S6"/>

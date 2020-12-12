@@ -35,6 +35,11 @@ sap.ui.define([
         onSubmit: function () {
             this.currentState.onSubmit()
         },
+        onReset: function () {
+            this.store.resetStatistics();
+            this.currentState = this.states.init;
+            this.refresh();
+        },
         play: function (number = this.store.number) {
             return new Promise(resolve => {
                 const { delay, rate } = this.store.settings;

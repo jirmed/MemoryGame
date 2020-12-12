@@ -1,7 +1,9 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core"
   xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout"
   xmlns="sap.m">
   <f:SimpleForm id="statistics"
+    binding="{/statistics}"
     minWidth="1024"
     maxContainerCols="3"
     editable="true"
@@ -15,8 +17,41 @@
     columnsM="3"
     validateFieldGroup="onValidateFieldGroup">
     <f:content>
-      <Table items="{/statistics/guesses}"
-        
+ 
+      <Label text="Guess count">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M6 S6"/>
+                </layoutData>
+      </Label>
+      <Text text="{guessCount}">
+               <layoutData>
+                    <l:GridData span="XL2 L2 M6 S6"/>
+                </layoutData>
+       </Text>
+
+      <Label text="Success count">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M6 S6"/>
+                </layoutData>
+      </Label>
+      <Text text="{successCount}">
+               <layoutData>
+                    <l:GridData span="XL2 L2 M6 S6"/>
+                </layoutData>
+       </Text>
+
+     <Label text="Success rate">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M6 S6"/>
+                </layoutData>
+      </Label>
+      <Text text="{parts: ['successCount','guessCount'], formatter:'.formatter.rate'}">
+               <layoutData>
+                    <l:GridData span="XL2 L2 M6 S6"/>
+                </layoutData>
+       </Text>
+
+     <Table items="{guesses}"
         alternateRowColors="true">
         <columns>
           <Column width="3em"/>
@@ -34,7 +69,10 @@
                 inverted="true"
                 active="false"
                 icon="{path:'correct',formatter:'.formatter.guessCorrectIcon'}" />
-              <ObjectNumber number="{randomNumber}" />
+              <ObjectStatus text="{randomNumber}"
+                inverted="false"
+                active="false"
+                icon="{path:'reverse',formatter:'.formatter.guessReverseIcon'}" />
               <ObjectNumber number="{guessNumber}"
                 state="{path:'correct',formatter:'.formatter.guessCorrectState'}" />
             </cells>

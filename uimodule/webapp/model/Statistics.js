@@ -19,9 +19,6 @@ sap.ui.define([
       this.guessCount++;
       if (guess.correct) { this.successCount++};
     },
-    get successRate() {
-      return this.guessCount > 0 ? this.successCount / this.guessCount : 0;
-    },
     reset: function() {
       this._setData(initialData);
     },

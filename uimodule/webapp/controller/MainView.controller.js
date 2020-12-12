@@ -20,6 +20,9 @@ sap.ui.define([
       };
       this.oGame.onSubmit();
     },
+    onResetButton: function () {
+      this.oGame.onReset();
+    },
     onSettingsChange: function () {
       this.oSettins.save();
       this.oStore.refresh();

@@ -4,7 +4,7 @@ sap.ui.require([
 ], function (Opa5, AggregationLengthEquals) {
   "use strict";
 
-  var sViewName = "net.konzult.myUI5App.view.MainView";
+  var sViewName = "net.konzult.memory.game.view.MainView";
   var sAppId = "idAppControl";
 
   Opa5.createPageObjects({

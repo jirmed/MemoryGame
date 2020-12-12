@@ -1,6 +1,6 @@
 sap.ui.define([
   "sap/ui/test/opaQunit",
-  "net/konzult/myUI5App/test/integration/pages/MainView"
+  "net/konzult/memory.game/test/integration/pages/MainView"
 ], function (opaTest) {
   "use strict";
 

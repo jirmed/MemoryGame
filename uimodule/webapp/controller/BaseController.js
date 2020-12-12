@@ -2,11 +2,11 @@ sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/core/routing/History",
   "sap/ui/core/UIComponent",
-  "net/konzult/myUI5App/model/formatter"
+  "../model/formatter"
 ], function(Controller, History, UIComponent, formatter) {
   "use strict";
 
-  return Controller.extend("net.konzult.myUI5App.controller.BaseController", {
+  return Controller.extend("net.konzult.memory.game.controller.BaseController", {
 
     formatter: formatter,
 

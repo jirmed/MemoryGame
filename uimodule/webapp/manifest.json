@@ -1,7 +1,7 @@
 {
   "_version": "1.12.0",
   "sap.app": {
-    "id": "net.konzult.myUI5App",
+    "id": "net.konzult.memory.game",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -28,7 +28,7 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "net.konzult.myUI5App.view.MainView",
+      "viewName": "net.konzult.memory.game.view.MainView",
       "type": "XML",
       "async": true,
       "id": "idAppControl"
@@ -49,7 +49,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "net.konzult.myUI5App.i18n.i18n"
+          "bundleName": "net.konzult.memory.game.i18n.i18n"
         }
       }
     },
@@ -64,7 +64,7 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
-        "viewPath": "net.konzult.myUI5App.view",
+        "viewPath": "net.konzult.memory.game.view",
         "controlId": "idAppControl",
         "controlAggregation": "pages",
         "async": true

@@ -3,12 +3,12 @@ sap.ui.define([
 ], function(Opa5) {
   "use strict";
 
-  return Opa5.extend("net.konzult.myUI5App.test.integration.arrangements.Startup", {
+  return Opa5.extend("net.konzult.memory.game.test.integration.arrangements.Startup", {
 
     iStartMyApp: function () {
       this.iStartMyUIComponent({
         componentConfig: {
-          name: "net.konzult.myUI5App",
+          name: "net.konzult.memory.game",
           async: true,
           manifest: true
         }

@@ -6,7 +6,7 @@ sap.ui.getCore().attachInit(function() {
   "use strict";
 
   sap.ui.require([
-    "net/konzult/myUI5App/test/integration/AllJourneys"
+    "net/konzult/memory.game/test/integration/AllJourneys"
   ], function() {
     QUnit.start();
   });

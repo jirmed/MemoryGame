@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <f:SimpleForm id="guessArea"
+        binding="{/guess}"
+        editable="true"
+        minWidth="1024"
+        maxContainerCols="1"
+        layout="ResponsiveGridLayout"
+        title="Guess area"
+        labelSpanL="4"
+        labelSpanM="4"
+        emptySpanL="0"
+        emptySpanM="0"
+        columnsL="1"
+        columnsM="1"
+        validateFieldGroup="onValidateFieldGroup">
+        <f:content>
+            <Label text="testovací pole" />
+            <Text text="{/screenState/numberColor}">
+            </Text>
+            <Label text="Random number"/>
+            <Text id="number"
+                class="big"
+                  text = "{= ${/screenState/numberVisible} ? ${/number} : ''}">
+                <customData>
+                    <core:CustomData key="number-color"
+                        value="{/screenState/numberColor}"
+                        writeToDom="true"/>
+                </customData>
+            </Text>
+            <Label text="Guess"/>
+            <Input value="{/guess}"
+                id="guessInput"
+                editable="{/screenState/guessInputAllowed}"
+                submit="onSubmitButton">
+            </Input>
+            <Button id="submitButton"
+                text="{/screenState/submitButtonLabel}"
+                type="Accept"
+                press="onSubmitButton"
+                enabled="{/screenState/submitButtonAllowed}">
+            </Button>
+            <Button text="Reset"
+                type="Reject"/>
+
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

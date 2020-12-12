@@ -1,12 +1,22 @@
- <mvc:View controllerName="net.konzult.myUI5App.controller.MainView"
+<mvc:View controllerName="net.konzult.memory.game.controller.MainView"
   displayBlock="true"
-  xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
-  <App id="idAppControl" >
-    <pages>
-      <Page title="{i18n>title}">
-        <content></content>
-      </Page>
-    </pages>
-  </App>
+  height="100%"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+  <Shell>
+    <App id="idAppControl">
+      <pages>
+        <Page title="{i18n>title}">
+          <content>
+            <core:Fragment fragmentName="net.konzult.memory.game.view.fragment.settings" type="XML"/>
+            <core:Fragment fragmentName="net.konzult.memory.game.view.fragment.guess" type="XML"/>
+            <core:Fragment fragmentName="net.konzult.memory.game.view.fragment.statistics" type="XML"/>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
 </mvc:View>

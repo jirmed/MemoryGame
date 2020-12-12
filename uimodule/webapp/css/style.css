@@ -1,1 +1,16 @@
-/* Enter your custom styles here */
+.big {
+    font-size: 3rem;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  [data-number-color="error"]{
+    color: red;
+  }
+  
+  [data-number-color="success"]{
+    color: green;
+  }
+  

@@ -1,6 +1,6 @@
 {
   "generator-easy-ui5": {
-    "projectname": "myUI5App",
+    "projectname": "memoryGame",
     "namespace": "net.konzult",
     "platform": "Static webserver",
     "viewtype": "XML",

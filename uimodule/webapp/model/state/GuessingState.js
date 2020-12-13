@@ -11,7 +11,7 @@ sap.ui.define([
       return {
         stateId: this.id,
         submitButtonAllowed: true,
-        submitButtonLabel: "Submit",
+        submitButtonLabel: "submit",
         guessInputAllowed: true,
         numberVisible: false
       }

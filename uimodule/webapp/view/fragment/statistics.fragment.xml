@@ -8,7 +8,7 @@
     maxContainerCols="3"
     editable="true"
     layout="ResponsiveGridLayout"
-    title="Statistics"
+    title="{i18n>statistics}"
     labelSpanL="4"
     labelSpanM="4"
     emptySpanL="0"
@@ -18,7 +18,7 @@
     validateFieldGroup="onValidateFieldGroup">
     <f:content>
  
-      <Label text="Guess count">
+      <Label text="{i18n>guess-count}">
                 <layoutData>
                     <l:GridData span="XL2 L2 M6 S6"/>
                 </layoutData>
@@ -29,7 +29,7 @@
                 </layoutData>
        </Text>
 
-      <Label text="Success count">
+      <Label text="{i18n>success-count}">
                 <layoutData>
                     <l:GridData span="XL2 L2 M6 S6"/>
                 </layoutData>
@@ -40,7 +40,7 @@
                 </layoutData>
        </Text>
 
-     <Label text="Success rate">
+     <Label text="{i18n>success-rate}">
                 <layoutData>
                     <l:GridData span="XL2 L2 M6 S6"/>
                 </layoutData>
@@ -56,10 +56,10 @@
         <columns>
           <Column width="3em"/>
           <Column>
-            <Text text="Number"/>
+            <Text text="{i18n>number}"/>
           </Column>
           <Column>
-            <Text text="Guess"/>
+            <Text text="{i18n>guess}"/>
           </Column>
         </columns>
         <items>

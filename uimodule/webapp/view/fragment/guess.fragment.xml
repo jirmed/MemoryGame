@@ -8,7 +8,7 @@
         minWidth="1024"
         maxContainerCols="1"
         layout="ResponsiveGridLayout"
-        title="Guess area"
+        title="{i18n>guess-area}"
         labelSpanL="4"
         labelSpanM="4"
         emptySpanL="0"
@@ -17,7 +17,7 @@
         columnsM="1"
         validateFieldGroup="onValidateFieldGroup">
         <f:content>
-            <Label text="Random number"/>
+            <Label text="{i18n>random-number}"/>
             <Text id="number"
                 class="big"
                   text = "{= ${/screenState/numberVisible} ? ${/number} : ''}">
@@ -27,19 +27,19 @@
                         writeToDom="true"/>
                 </customData>
             </Text>
-            <Label text="Guess"/>
+            <Label text="{i18n>guess}"/>
             <Input value="{/guess}"
                 id="guessInput"
                 editable="{/screenState/guessInputAllowed}"
                 submit="onSubmitButton">
             </Input>
             <Button id="submitButton"
-                text="{/screenState/submitButtonLabel}"
+                text="{path:  '/screenState/submitButtonLabel' , formatter: '.formatter.i18n'}"
                 type="Accept"
                 press="onSubmitButton"
                 enabled="{/screenState/submitButtonAllowed}">
             </Button>
-            <Button text="Reset"
+            <Button text="{i18n>reset}"
                 type="Reject"
                 press="onResetButton"/>
 

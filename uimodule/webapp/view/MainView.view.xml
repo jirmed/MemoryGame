@@ -9,7 +9,9 @@
   <Shell>
     <App id="idAppControl">
       <pages>
-        <Page title="{i18n>title}">
+        <Page title="{
+          
+        }">
           <content>
             <core:Fragment fragmentName="net.konzult.memory.game.view.fragment.settings" type="XML"/>
             <core:Fragment fragmentName="net.konzult.memory.game.view.fragment.guess" type="XML"/>

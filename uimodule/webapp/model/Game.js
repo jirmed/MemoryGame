@@ -4,6 +4,7 @@ sap.ui.define([
     "./state/PlayingState",
     "./state/GuessingState",
     "./state/ResultState",
+    "../thirdParty/responsiveVoice"
 ], function (Object, InitialState, PlayingState, GuessingState, ResultState) {
     "use strict";
     return Object.extend("net.konzult.memory.game.model.Game", {

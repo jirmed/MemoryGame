@@ -31,7 +31,9 @@
             <Input value="{/guess}"
                 id="guessInput"
                 editable="{/screenState/guessInputAllowed}"
-                submit="onSubmitButton">
+                maxLength="20"
+                submit="onSubmitButton"
+                liveChange="onGuessLiveChange">
             </Input>
             <Button id="submitButton"
                 text="{path:  '/screenState/submitButtonLabel' , formatter: '.formatter.i18n'}"

@@ -36,9 +36,9 @@ sap.ui.define([
             this.currentState.onSubmit();
         },
         onReset: function () {
+            this.currentState.onReset();
             this.store.resetStatistics();
-            this.currentState = this.states.init;
-            this.refresh();
+            this.changeState("init");
         },
         onSettingsChanged: function () {
             this.store.settings.save();

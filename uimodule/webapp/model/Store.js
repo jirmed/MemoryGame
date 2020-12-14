@@ -25,6 +25,10 @@ sap.ui.define([
     },
     resetStatistics: function() {
       this.statistics.reset();
+    },
+    resetGuess: function() {
+      this.number = undefined;
+      this.guess = undefined;
     }
   });
 });

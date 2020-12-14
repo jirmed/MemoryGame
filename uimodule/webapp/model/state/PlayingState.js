@@ -11,6 +11,7 @@ sap.ui.define([
       this.context.newNumber();
     },
     start: function () {
+      this.stopped = false;
       this._play()
         .then(this.onPlayCompleted.bind(this));
     },
@@ -28,7 +29,7 @@ sap.ui.define([
         const currentLocale = sap.ui.getCore().getConfiguration().getLanguage();
         const voice = currentLocale === "cs" ? "Czech Female" : "UK English Female";
         const { delay, rate } = this.context.store.settings;
-        if (number && number.length > 0) {
+        if (number && number.length > 0 && !this.stopped) {
           responsiveVoice.speak(" " + number[0], voice, {
             rate,
             onend: () => setTimeout(() => {
@@ -40,10 +41,13 @@ sap.ui.define([
         }
       });
     },
-
     onPlayCompleted: function () {
-      this.context.changeState("guessing");
+      if (!this.stopped)
+        this.context.changeState("guessing");
     },
-    onSubmit: function () { }
+    onReset: function () {
+      this.stopped = true;
+      responsiveVoice.cancel();
+    }
   });
 });

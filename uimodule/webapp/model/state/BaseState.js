@@ -10,6 +10,8 @@ sap.ui.define([
     },
     init: () => { },
     start: () => { },
+    onSubmit: () => { },
+    onReset: () => { },
     getScreenState: function () {
       const defaultScreenState = {
         submitButtonAllowed: false,

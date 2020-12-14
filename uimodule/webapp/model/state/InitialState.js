@@ -5,9 +5,9 @@ sap.ui.define([
   return BaseState.extend("net.konzult.memory.game.model.state.InitialState", {
     id: "init",
     init: function () {
-      this.context.guess = undefined;
+      this.context.store.resetGuess();
     },
-    _getScreenState: function() {
+    _getScreenState: function () {
       return {
         stateId: this.id,
         submitButtonAllowed: true,
@@ -19,7 +19,7 @@ sap.ui.define([
     onSubmit: function () {
       this.context.changeState("playing");
     },
-    getFocusOn: function() {
+    getFocusOn: function () {
       return "submitButton";
     }
   });

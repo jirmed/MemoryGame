@@ -19,8 +19,14 @@ sap.ui.define([
       this.game.onSubmit();
       this.setFocus();
     },
+    onGuessLiveChange: function(event) {
+      const input = event.getSource();
+      const value = input.getValue().replace(/[^\d]/g, "");
+      input.setValue(value);
+    },
     onResetButton: function () {
       this.game.onReset();
+      this.setFocus();
     },
     onSettingsChange: function () {
       this.game.onSettingsChanged();

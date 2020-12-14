@@ -24,6 +24,9 @@ sap.ui.define([
     onSubmit: function () {
       this.context.changeState("playing");
     },
+    getFocusOn: function() {
+      return "submitButton";
+    },
     reverse: (str) => str.split("").reverse().join("")
   });
 });

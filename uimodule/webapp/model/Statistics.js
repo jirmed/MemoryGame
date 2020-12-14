@@ -25,7 +25,7 @@ sap.ui.define([
     _setData: function(data) {
       this.guessCount = data.guessCount;
       this.successCount = data.successCount;
-      this.guesses = data.guesses;
+      this.guesses = [...data.guesses];
     }
   });
 });

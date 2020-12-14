@@ -40,8 +40,15 @@ sap.ui.define([
             this.currentState = this.states.init;
             this.refresh();
         },
+        onSettingsChanged: function () {
+            this.store.settings.save();
+            this.refresh();
+        },
         newNumber: function () {
             this.store.number = this._generateNumber(this.store.settings.digits);
+        },
+        getFocusOn: function() {
+            return this.currentState.getFocusOn();
         },
         _generateNumber: function (length) {
             return Array(length)

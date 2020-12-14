@@ -19,6 +19,9 @@ sap.ui.define([
       };
       return Object.assign(defaultScreenState, this._getScreenState());
     },
+    getFocusOn() {
+      return "guessInput";
+    },
     _getScreenState: function() { return {};}
   });
 });

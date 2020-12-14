@@ -7,25 +7,27 @@ sap.ui.define([
 
   return BaseController.extend("net.konzult.memory.game.controller.MainView", {
     onInit: function () {
-      this.oStore = new Store();
-      this.oSettins = this.oStore.settings;
-      this.oGame = new Game(this.oStore);
-      this.getView().setModel(this.oGame.getModel());
+      this.store = new Store();
+      this.settings = this.store.settings;
+      this.game = new Game(this.store);
+      this.getView().setModel(this.game.getModel());
+    },
+    onAfterRendering: function() {
+      this.setFocus();
     },
     onSubmitButton: function () {
-      if (this.oStore.screenState.stateId === "guessing") {
-        this.getView().byId("submitButton").focus();
-      } else {
-        this.getView().byId("guessInput").focus();
-      };
-      this.oGame.onSubmit();
+      this.game.onSubmit();
+      this.setFocus();
     },
     onResetButton: function () {
-      this.oGame.onReset();
+      this.game.onReset();
     },
     onSettingsChange: function () {
-      this.oSettins.save();
-      this.oStore.refresh();
+      this.game.onSettingsChanged();
+    },
+    setFocus: function() {
+      const focusOn = this.game.getFocusOn();
+      this.getView().byId(focusOn).focus();
     }
   });
 });

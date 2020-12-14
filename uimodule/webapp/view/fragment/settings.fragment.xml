@@ -29,7 +29,7 @@
                 fieldWidth="50%"
                 description=" "
                 min="1"
-                max="99"
+                max="20"
                 textAlign="Center"
                 step="1"
                 largerStep="10">

@@ -17,6 +17,10 @@ sap.ui.define([
     },
     onSubmit: function () {
       this.context.changeState("result");
+    },
+    getFocusOn: function() {
+      return "submitButton";
     }
+
   });
 });

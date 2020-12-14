@@ -7,7 +7,6 @@ sap.ui.define([
     id: "result",
     init: function () {
       const store = this.context.store;
-      console.log("---Result Init---");
       const finalGuess = new Guess(store.number, store.guess, store.settings.reverse);
       this.correct = finalGuess.correct;
       store.statistics.addGuess(finalGuess);
@@ -20,7 +19,7 @@ sap.ui.define([
         guessInputAllowed: false,
         numberVisible: true,
         numberColor: this.correct ? "success" :"error"
-      }
+      };
     },
     onSubmit: function () {
       this.context.changeState("playing");

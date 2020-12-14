@@ -14,4 +14,4 @@ sap.ui.define([
         this.model.refresh();
       }
     });
-  }); 
+  });

@@ -19,6 +19,6 @@ sap.ui.define([
       };
       return Object.assign(defaultScreenState, this._getScreenState());
     },
-    _getScreenState: function() { return {}}
+    _getScreenState: function() { return {};}
   });
 });

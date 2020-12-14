@@ -5,7 +5,6 @@ sap.ui.define([
   return BaseState.extend("net.konzult.numberMemorizer.model.state.GuessingState", {
     id: "guessing",
     init: function () {
-      console.log("---Guessing Init---");
     },
     _getScreenState: function() {
       return {
@@ -14,7 +13,7 @@ sap.ui.define([
         submitButtonLabel: "submit",
         guessInputAllowed: true,
         numberVisible: false
-      }
+      };
     },
     onSubmit: function () {
       this.context.changeState("result");

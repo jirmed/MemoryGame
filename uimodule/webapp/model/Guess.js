@@ -19,4 +19,4 @@ sap.ui.define([
       return input.split("").reverse().join("");
     }
   });
-}); 
+});

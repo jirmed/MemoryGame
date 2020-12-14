@@ -2,7 +2,6 @@ sap.ui.define([
   "./BaseState"
 ], function (BaseState) {
   "use strict";
-  let self;
   return BaseState.extend("net.konzult.memory.game.model.state.InitialState", {
     id: "init",
     init: function () {
@@ -15,7 +14,7 @@ sap.ui.define([
         submitButtonLabel: "new-number",
         guessInputAllowed: false,
         numberVisible: false
-      }
+      };
     },
     onSubmit: function () {
       this.context.changeState("playing");

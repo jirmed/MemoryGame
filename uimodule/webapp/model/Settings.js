@@ -1,7 +1,6 @@
 sap.ui.define([
   "./BaseObject",
-  "sap/ui/model/json/JSONModel"
-], function (BaseObject, JSONModel) {
+], function (BaseObject) {
   "use strict";
 
   return BaseObject.extend("net.konzult.number.game.model.Settings", {
@@ -34,7 +33,6 @@ sap.ui.define([
     save: function () {
       const { digits, delay, showNumber, reverse } = this;
       const data = JSON.stringify({ digits, delay, showNumber, reverse });
-      console.log("saving");
       window.localStorage.setItem("settings", data);
     },
     set digits(digits) {

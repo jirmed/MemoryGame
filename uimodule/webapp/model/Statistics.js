@@ -4,10 +4,10 @@ sap.ui.define([
   "use strict";
   const MAX_LOG_LENGTH = 30;
   const initialData = {
-    guesses:[],
+    guesses: [],
     guessCount: 0,
     successCount: 0
-  }
+  };
   return BaseObject.extend("net.konzult.memory.game.model.Statistics", {
     constructor: function (data = initialData) {
       BaseObject.call(this);
@@ -15,9 +15,9 @@ sap.ui.define([
     },
     addGuess: function( guess) {
       this.guesses.unshift(guess);
-      this.guesses = this.guesses.slice(0,MAX_LOG_LENGTH);
+      this.guesses = this.guesses.slice(0, MAX_LOG_LENGTH);
       this.guessCount++;
-      if (guess.correct) { this.successCount++};
+      if (guess.correct) { this.successCount++;};
     },
     reset: function() {
       this._setData(initialData);
@@ -28,4 +28,4 @@ sap.ui.define([
       this.guesses = data.guesses;
     }
   });
-}); 
+});

@@ -3,8 +3,7 @@ sap.ui.define([
     "./state/InitialState",
     "./state/PlayingState",
     "./state/GuessingState",
-    "./state/ResultState",
-    "../thirdParty/responsiveVoice"
+    "./state/ResultState"
 ], function (Object, InitialState, PlayingState, GuessingState, ResultState) {
     "use strict";
     return Object.extend("net.konzult.memory.game.model.Game", {
@@ -34,27 +33,12 @@ sap.ui.define([
             return this.store.getModel();
         },
         onSubmit: function () {
-            this.currentState.onSubmit()
+            this.currentState.onSubmit();
         },
         onReset: function () {
             this.store.resetStatistics();
             this.currentState = this.states.init;
             this.refresh();
-        },
-        play: function (number = this.store.number) {
-            return new Promise(resolve => {
-                const { delay, rate } = this.store.settings;
-                if (number && number.length > 0) {
-                    responsiveVoice.speak(" " + number[0], "Czech Female", {
-                        rate,
-                        onend: () => setTimeout(() => {
-                            resolve(this.play(number.slice(1)));
-                        }, delay)
-                    });
-                } else {
-                    resolve("playback completed");
-                }
-            })
         },
         newNumber: function () {
             this.store.number = this._generateNumber(this.store.settings.digits);
@@ -63,6 +47,6 @@ sap.ui.define([
             return Array(length)
               .fill(null)
               .reduce(prev => prev + Math.floor(Math.random() * 10), "");
-          }, 
+          },
     });
-}); 
+});

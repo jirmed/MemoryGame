@@ -25,9 +25,11 @@ sap.ui.define([
     },
     _play: function (number = this.context.store.number) {
       return new Promise(resolve => {
+        const currentLocale = sap.ui.getCore().getConfiguration().getLanguage();
+        const voice = currentLocale === "cs" ? "Czech Female" : "UK English Female";
         const { delay, rate } = this.context.store.settings;
         if (number && number.length > 0) {
-          responsiveVoice.speak(" " + number[0], "Czech Female", {
+          responsiveVoice.speak(" " + number[0], voice, {
             rate,
             onend: () => setTimeout(() => {
               resolve(this._play(number.slice(1)));

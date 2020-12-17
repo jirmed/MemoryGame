@@ -21,3 +21,8 @@ server:
       configuration:
         port: 35729
         path: uimodule/webapp
+builder:
+  resources:
+    excludes:
+      - "/.vscode"
+      - "/test"

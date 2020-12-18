@@ -3,23 +3,15 @@
     xmlns:l="sap.ui.layout"
     xmlns="sap.m">
     <f:SimpleForm id="guessArea"
-        binding="{/guess}"
         editable="true"
-        minWidth="1024"
-        maxContainerCols="1"
         layout="ResponsiveGridLayout"
-        title="{i18n>guess-area}"
-        labelSpanL="4"
-        labelSpanM="4"
-        emptySpanL="0"
-        emptySpanM="0"
-        columnsL="1"
-        columnsM="1"
-        validateFieldGroup="onValidateFieldGroup">
+        title="{i18n>guess-area}">
+        
         <f:content>
             <Label text="{i18n>random-number}"/>
             <Text id="number"
                 class="big"
+                
                   text = "{= ${/screenState/numberVisible} ? ${/number} : ''}">
                 <customData>
                     <core:CustomData key="number-color"
@@ -27,7 +19,8 @@
                         writeToDom="true"/>
                 </customData>
             </Text>
-            <Label text="{i18n>guess}"/>
+            <Label text="{i18n>guess}"
+                labelFor="guessInput"/>
             <Input value="{/guess}"
                 id="guessInput"
                 editable="{/screenState/guessInputAllowed}"

@@ -1,22 +1,13 @@
-<core:FragmentDefinition
-    xmlns:f="sap.ui.layout.form"
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
     xmlns="sap.m">
+
     <f:SimpleForm id="settings"
         binding="{/settings}"
-        minWidth="1024"
-        maxContainerCols="3"
         editable="true"
         layout="ResponsiveGridLayout"
-        title="{i18n>settings}"
-        labelSpanL="4"
-        labelSpanM="4"
-        emptySpanL="0"
-        emptySpanM="0"
-        columnsL="3"
-        columnsM="3"
-        validateFieldGroup="onValidateFieldGroup">
+        title="{i18n>settings}">
         <f:content>
             <Label text="{i18n>digits}">
                 <layoutData>
@@ -42,10 +33,9 @@
                     <l:GridData span="XL1 L1 M6 S6"/>
                 </layoutData>
             </Label>
-            <StepInput description="{i18n>ms}"
+            <StepInput description="{i18n>milisecond}"
                 value="{delay}"
                 change="onSettingsChange"
-                fieldWidth="50%"
                 min="0"
                 max="2000"
                 textAlign="Center"

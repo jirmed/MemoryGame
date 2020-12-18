@@ -2,84 +2,84 @@
   xmlns:f="sap.ui.layout.form"
   xmlns:l="sap.ui.layout"
   xmlns="sap.m">
-  <f:SimpleForm id="statistics"
-    binding="{/statistics}"
-    minWidth="1024"
-    maxContainerCols="3"
-    editable="true"
-    layout="ResponsiveGridLayout"
-    title="{i18n>statistics}"
-    labelSpanL="4"
-    labelSpanM="4"
-    emptySpanL="0"
-    emptySpanM="0"
-    columnsL="3"
-    columnsM="3"
-    validateFieldGroup="onValidateFieldGroup">
-    <f:content>
- 
-      <Label text="{i18n>guess-count}">
-                <layoutData>
-                    <l:GridData span="XL2 L2 M6 S6"/>
-                </layoutData>
-      </Label>
-      <Text text="{guessCount}">
-               <layoutData>
-                    <l:GridData span="XL2 L2 M6 S6"/>
-                </layoutData>
-       </Text>
+  <Panel>
+    <headerToolbar>
+      <OverflowToolbar >
+        <Title text="{i18n>statistics}" />
+      </OverflowToolbar>
+    </headerToolbar>
 
-      <Label text="{i18n>success-count}">
-                <layoutData>
-                    <l:GridData span="XL2 L2 M6 S6"/>
-                </layoutData>
-      </Label>
-      <Text text="{successCount}">
-               <layoutData>
-                    <l:GridData span="XL2 L2 M6 S6"/>
-                </layoutData>
-       </Text>
+    <f:SimpleForm id="statistics"
+      ariaLabelledBy="{i18n>statistics}"
+      binding="{/statistics}"
+      editable="false"
+      layout="ResponsiveGridLayout"
+      >
+      <f:content>
 
-     <Label text="{i18n>success-rate}">
-                <layoutData>
-                    <l:GridData span="XL2 L2 M6 S6"/>
-                </layoutData>
-      </Label>
-      <Text text="{parts: ['successCount','guessCount'], formatter:'.formatter.rate'}">
-               <layoutData>
-                    <l:GridData span="XL2 L2 M6 S6"/>
-                </layoutData>
-       </Text>
+        <Label text="{i18n>guess-count}">
+          <layoutData>
+            <l:GridData span="XL2 L2 M6 S6"/>
+          </layoutData>
+        </Label>
+        <Text text="{guessCount}">
+          <layoutData>
+            <l:GridData span="XL2 L2 M6 S6"/>
+          </layoutData>
+        </Text>
 
-     <Table items="{guesses}"
-        alternateRowColors="true">
-        <columns>
-          <Column width="3em"/>
-          <Column>
-            <Text text="{i18n>number}"/>
-          </Column>
-          <Column>
-            <Text text="{i18n>guess}"/>
-          </Column>
-        </columns>
-        <items>
-          <ColumnListItem>
-            <cells>
-              <ObjectStatus state="{path:'correct',formatter:'.formatter.guessCorrectState'}"
-                inverted="true"
-                active="false"
-                icon="{path:'correct',formatter:'.formatter.guessCorrectIcon'}" />
-              <ObjectStatus text="{randomNumber}"
-                inverted="false"
-                active="false"
-                icon="{path:'reverse',formatter:'.formatter.guessReverseIcon'}" />
-              <ObjectNumber number="{guessNumber}"
-                state="{path:'correct',formatter:'.formatter.guessCorrectState'}" />
-            </cells>
-          </ColumnListItem>
-        </items>
-      </Table>
-    </f:content>
-  </f:SimpleForm>
+        <Label text="{i18n>success-count}">
+          <layoutData>
+            <l:GridData span="XL2 L2 M6 S6"/>
+          </layoutData>
+        </Label>
+        <Text text="{successCount}">
+          <layoutData>
+            <l:GridData span="XL2 L2 M6 S6"/>
+          </layoutData>
+        </Text>
 
+        <Label text="{i18n>success-rate}">
+          <layoutData>
+            <l:GridData span="XL2 L2 M6 S6"/>
+          </layoutData>
+        </Label>
+        <Text text="{parts: ['successCount','guessCount'], formatter:'.formatter.rate'}">
+          <layoutData>
+            <l:GridData span="XL2 L2 M6 S6"/>
+          </layoutData>
+        </Text>
+
+
+      </f:content>
+    </f:SimpleForm>
+    <Table items="{/statistics/guesses}"
+      alternateRowColors="true">
+      <columns>
+        <Column width="3em"/>
+        <Column>
+          <Text text="{i18n>number}"/>
+        </Column>
+        <Column>
+          <Text text="{i18n>guess}"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem>
+          <cells>
+            <ObjectStatus state="{path:'correct',formatter:'.formatter.guessCorrectState'}"
+              inverted="true"
+              active="false"
+              icon="{path:'correct',formatter:'.formatter.guessCorrectIcon'}" />
+            <ObjectStatus text="{randomNumber}"
+              inverted="false"
+              active="false"
+              icon="{path:'reverse',formatter:'.formatter.guessReverseIcon'}" />
+            <ObjectNumber number="{guessNumber}"
+              state="{path:'correct',formatter:'.formatter.guessCorrectState'}" />
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+  </Panel>
 </core:FragmentDefinition>    

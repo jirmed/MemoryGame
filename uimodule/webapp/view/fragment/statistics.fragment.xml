@@ -2,15 +2,15 @@
   xmlns:f="sap.ui.layout.form"
   xmlns:l="sap.ui.layout"
   xmlns="sap.m">
-  <Panel>
+  <Panel id="statistics">
     <headerToolbar>
       <OverflowToolbar >
         <Title text="{i18n>statistics}" />
       </OverflowToolbar>
     </headerToolbar>
 
-    <f:SimpleForm id="statistics"
-      ariaLabelledBy="{i18n>statistics}"
+    <f:SimpleForm 
+      ariaLabelledBy="statistics"
       binding="{/statistics}"
       editable="false"
       layout="ResponsiveGridLayout"

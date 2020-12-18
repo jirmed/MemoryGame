@@ -1,16 +1,19 @@
 sap.ui.define([
   "./BaseState",
-  "../ResponsiveVoicePlayer"
+  "../LocalVoicePlayer"
 ], function (BaseState, VoicePlayer) {
   "use strict";
   return BaseState.extend("net.konzult.numberMemorizer.model.state.PlayingState", {
     id: "playing",
-    init: function () {
-      this.context.store.guess = undefined;
-      this.context.newNumber();
+    constructor: function(context) {
+      BaseState.apply(this, [context]);
       const currentLocale = sap.ui.getCore().getConfiguration().getLanguage();
       this.player = new VoicePlayer(currentLocale);
     },
+    init: function () {
+      this.context.store.guess = undefined;
+      this.context.newNumber();
+},
     start: function () {
       const voiceSettings = {
         delay: this.context.store.settings.delay,

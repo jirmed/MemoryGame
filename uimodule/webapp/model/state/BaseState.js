@@ -5,7 +5,7 @@ sap.ui.define([
   return BaseObject.extend("net.konzult.numberMemorizer.model.state.BaseState", {
     id: "default",
     constructor: function (context) {
-//      BaseObject.call(this);
+      BaseObject.call(this);
       this.context = context;
     },
     init: () => { },
